@@ -1,0 +1,36 @@
+{% extends 'navigation.html'%}
+{% load static %}
+{% block body %}
+
+{% ifequal error "no" %}
+<script>
+	alert('Logged In Successfully...');
+	window.location=('{% url 'profile' %}');
+</script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+	alert('Invalid Login Credentials, Try Again');
+</script>
+{% endifequal %}
+<section class="userlog" id="userlog">
+<h1 class="heading text-center mt-1 pb-2" style="background-color:orange;">User Login</h1>
+<div class="row">
+    <div class="col-md-6">
+			<div class="img">
+        <img src="{% static 'images/webinar-pana.png' %}" style="height:80%;width:70%" class="bg-primary img-thumbnail shadow-lg ml-5" alt="">
+			</div>
+    </div>
+		<div class="col-md-5"><br><br><br><br>
+    <form method="post" class="mt-5">
+        {% csrf_token %}
+				<input type="email" placeholder="Enter Email ID" name="emailid" class="form-control">
+        <input type="password" placeholder="Enter Password" name="pwd" class="form-control mt-2">
+        <p>don't have an account? <a href="{% url 'signup' %}" class="text-danger">register now</a></p>
+        <center><input type="submit" class="btn btn-primary" value="Login"></center>
+    </form>
+		</div>
+</div>
+</section>
+{% endblock %}

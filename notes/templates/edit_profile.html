@@ -1,0 +1,78 @@
+{% extends 'usernavigation.html'%}
+{% load static %}
+{% block body %}
+
+<div class="container"
+		style="font-family: 'IBM Plex Sans', sans-serif;">
+		<div class="row">
+			<div class="col-sm-6 mt-4">
+				<h2 class="text-center text-primary bg-warning pb-1">Edit Profile</h2>
+				<hr>
+				<form method="post" class="bg-info py-4 px-4">
+                    {% csrf_token %}
+					<div class="row register-form">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label> First Name</label>
+                <input type="text" class="form-control" value="{{data.user.first_name}}" name="firstname">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label> Last Name</label>
+                <input type="text" class="form-control" value="{{data.user.last_name}}" name="lastname">
+							</div>
+						</div>
+
+						<div class="col-md-12">
+							<div class="form-group">
+								<label> Contact</label>
+								<input type="text" class="form-control" name="contact" value="{{data.contact}}">
+							</div>
+						</div>
+
+						<div class="col-md-12">
+							<div class="form-group">
+								<label> Email Address</label>
+								<input type="email" class="form-control" name="emailid" value="{{data.user.username}}" readonly>
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="form-group">
+								<label> Branch</label>
+								<select class="form-control" name="branch">
+									<option value="Computer Science">Computer Science</option>
+									<option value="Mechanical">Mechanical</option>
+									<option value="Civil">Civil</option>
+									<option value="Electronics">Electronics</option>
+									<option value="Electric">Electric</option>
+									<option value="IT">IT</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="form-group col-md-6 mt-2">
+							<br>
+							<input type="text" value="{{data.branch}}" class="form-control" readonly>
+						</div>
+						<input type="submit" value="Update" class="btn btn-warning mt-3">
+					</div>
+			</form>
+			</div>
+			<div class="col-sm-6 mt-5"><br><br>
+				<img src="{% static 'images/editpro.jpg' %}" style="width: 90%; height: 442px" class="img-thumbnail bg-dark">
+			</div>
+
+		</div>
+	</div>
+
+{% if error %}
+<script>
+	alert('Profile Updated Successfully');
+	window.location=('{% url 'profile' %}');
+</script>
+{% endif %}
+
+
+{% endblock %}

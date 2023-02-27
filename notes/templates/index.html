@@ -1,0 +1,114 @@
+{% load static %}
+{% include 'cdnlines.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Note Sharing</title>
+
+    <!-- google fonts cdn link  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<style media="screen">
+  body{
+    background-color: lightgreen;
+    background-image: url("static/images/noteshare.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(3px);
+  }
+</style>
+<body>
+
+<!-- header section starts  -->
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:teal;">
+      <a href="{% url 'index' %}" class="logo text-dark font-weight-bold btn btn-outline-warning">Online Notes Sharing</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active"><a class="nav-link text-white ml-5" class="active" href="{% url 'index' %}">Home<span class="sr-only">(current)</span></a></li>
+            <li class="nav-item active"><a class="nav-link text-white" href="{% url 'about' %}">About</a></li>
+            <li class="nav-item active"><a class="nav-link text-white" href="{% url 'contact' %}">Contact</a></li>
+            <li class="nav-item active"><a class="nav-link text-white" href="{% url 'signup' %}">User Signup</a></li>
+            <li class="nav-item active"><a class="nav-link text-white" href="{% url 'login' %}">User Login</a></li>
+            <li class="nav-item active"><a class="nav-link text-white" href="{% url 'login_admin' %}">Admin Login</a></li>
+          </ul>
+    </nav>
+</header>
+<!-- header section ends -->
+<!-- home section starts  -->
+<section class="home" id="home">
+    <h1 style="background-color :orange" class="text-center pb-2 mt-1">Online Notes Sharing</h1>
+    <div class="shape"></div>
+
+</section>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <img src="{%static 'images/home.jpg'%}" style="height:260px;width:400px" alt="">
+  </div>
+  <div class="col-md-4">
+    <img src="{%static 'images/home1.jpg'%}" style="height:260px;width:400px" alt="">
+  </div>
+  <div class="col-md-4">
+    <img src="{%static 'images/home2.jpg'%}" style="height:260px;width:400px" alt="">
+  </div>
+</div><br><br><br>
+<!-- home section ends -->
+<!-- footer section starts  -->
+<div class="footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="box-container">
+            <div class="box text-center font-weight-bold bg-info pb-2">
+                <h3 class="bg-warning pb-1">Online Source</h3>
+                <a class="nav-link text-dark" href="https://www.javatpoint.com/">Javatpoint</a>
+                <a class="nav-link text-dark" href="https://www.tutorialspoint.com/tutorialslibrary.htm">Tutorial point</a>
+                <a class="nav-link text-dark" href="https://www.geeksforgeeks.org/">GeeksForGeeks</a>
+
+            </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="box text-center font-weight-bold bg-info pb-2">
+          <h3 class="bg-warning pb-1">Quick Links</h3>
+          <a class="nav-link text-dark" href="http://www.fmuniversity.nic.in/">F M University</a>
+          <a class="nav-link text-dark" href="https://swayam.gov.in/">swayam</a>
+          <a class="nav-link text-dark" href="https://nptel.ac.in/">NPTEL</a>
+     </div>
+    </div>
+    <div class="col-md-4">
+      <div class="box text-center font-weight-bold bg-info pb-2">
+          <h3 class="bg-warning pb-1">Contact Info</h3>
+          <p> <i class="fas fa-map-marker-alt"></i>F M University PG Dept. of Computer Science</p>
+          <p> <i class="fas fa-envelope"></i>hodictfmu@gmail.com</p>
+          <p> <i class="fas fa-phone"></i>8917373059</p>
+      </div>
+    </div>
+  </div>
+    </div>
+</div>
+<!-- footer section ends -->
+
+<!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+{% load static %}
+{% include 'cdnlines.html' %}
+
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Note Sharing</title>
+
+    <!-- google fonts cdn link  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<style media="screen">
+  body{
+    background-image: url("static/images/noteshare.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(3px);
+  }
+</style>
+
+<body>
+
+<!-- header section starts  -->
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:teal;" >
+      <a href="{% url 'index' %}" class="logo text-dark font-weight-bold btn btn-outline-warning"> Online Notes Sharing</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link text-white ml-5" href="{% url 'index' %}">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{% url 'about' %}">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{% url 'contact' %}">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{% url 'signup' %}">User Signup</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{% url 'login' %}">User Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{% url 'login_admin' %}">Admin Login</a>
+      </li>
+    </nav>
+</header>
+<!-- header section ends -->
+</body>
+</html>
+
+{% block body %}
+
+{% endblock %}
