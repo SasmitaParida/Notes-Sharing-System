@@ -1,19 +1,19 @@
 {% extends 'navigation.html'%}
 {% load static %}
 {% block body %}
-{% ifequal error "no" %}
+{% if error == "no" %}
      <script>
 	   alert('Your Message has been Send Successfully');
 	   window.location=('{% url 'contact' %}');
      </script>
-{% endifequal %}
-{% ifequal error "yes" %}
+{% endif %}
+{% if error == "yes" %}
      <script>
 	    alert('Something went wrong, Try Again');
      </script>
-{% endifequal %}
+{% endif %}
 <section class="contact" id="contact">
-<h1 class="text-center mt-1 pb-2" style="background-color:orange;">Contact Us</h1>
+<h1 class="text-center mt-1 pb-2" style="background-color:orange;padding: 50px;">Contact Us</h1>
 <div class="container-fluid">
 <div class="row">
   <div class="col-md-6">
@@ -22,9 +22,9 @@
   <div class="col-md-5">
     <form method="post">
         {% csrf_token %}
-        <input type="text" placeholder="full name" name="fullname" class="form-control ">
-        <input type="email" placeholder="your email" name="email" class="form-control mt-2">
-        <input type="number" placeholder="your contact number" name="mobile" class="form-control mt-2">
+        <input type="text" placeholder="full name" name="fullname" required class="form-control ">
+        <input type="email" placeholder="your email" name="email" required class="form-control mt-2">
+        <input type="number" placeholder="your contact number" name="mobile" required class="form-control mt-2">
         <input type="text" placeholder="Subject" name="subject" class="form-control mt-2">
         <textarea name="message" id="" cols="30" rows="8" class="form-control mt-2" placeholder="Send Message..."></textarea>
         <center><input type="submit" class="btn btn-success shadow-lg mt-2" value="send now"></center>
